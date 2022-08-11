@@ -1,5 +1,5 @@
-CC := gcc
-CFLAGS := -g -Wall
+CC := clang
+CFLAGS := -g -Wall -O2 -DUSE_POT
 TARGET := pipe fifo socketpair uds tcp udp shm shm2
 
 all: $(TARGET)
@@ -33,4 +33,4 @@ test:
 	sudo ./run_tests.sh
 
 clean:
-	rm $(TARGET)
+	rm -f $(TARGET) fifo-ipc uds-ipc

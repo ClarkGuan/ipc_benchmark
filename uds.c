@@ -71,6 +71,7 @@ int main(int argc, char *argv[]) {
             fprintf(stderr, "sum error: %d != %d\n", sum, count * size);
             return 1;
         }
+        close(fd);
     } else {
         sleep(1);
 

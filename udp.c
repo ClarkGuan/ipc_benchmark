@@ -93,6 +93,5 @@ int main(int argc, char *argv[]) {
             count * 1.0 / tm);
     }
 
-    printf("OKOK-----------\n");
     return 0;
 }
