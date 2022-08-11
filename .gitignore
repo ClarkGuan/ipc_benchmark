@@ -38,7 +38,11 @@ socketpair
 uds
 tcp
 udp
+shm
+shm2
+mq
 
 fifo-ipc
 uds-ipc
 
+.idea

@@ -1,6 +1,6 @@
 CC := clang
 CFLAGS := -g -Wall -O2 -DUSE_POT
-TARGET := pipe fifo socketpair uds tcp udp shm shm2
+TARGET := pipe fifo socketpair uds tcp udp shm shm2 mq
 
 all: $(TARGET)
 
@@ -28,9 +28,12 @@ shm: shm.c
 shm2: shm2.c
 	$(CC) $(CFLAGS) -lrt -o $@ $<
 
+mq: mq.c
+	$(CC) $(CFLAGS) -lrt -o $@ $<
+
 .PHONY: test
 test:
-	sudo ./run_tests.sh
+	./run_tests.sh
 
 clean:
 	rm -f $(TARGET) fifo-ipc uds-ipc
